@@ -1,0 +1,45 @@
+{
+  "name": "k7-sequelize",
+  "version": "1.0.0",
+  "description": "K7 adapter for Sequelize ORM",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebergamo/k7-sequelize.git"
+  },
+  "keywords": [
+    "k7",
+    "hapi.",
+    "hapijs",
+    "orm",
+    "sequelize",
+    "postgresql",
+    "mysql",
+    "sqlite"
+  ],
+  "author": "Marcos Bergamo <marcos@thedon.com.br>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thebergamo/k7-sequelize/issues"
+  },
+  "homepage": "https://github.com/thebergamo/k7-sequelize#readme",
+  "dependencies": {
+    "glob": "^7.0.0",
+    "hoek": "^3.0.4",
+    "k7": "git+https://github.com/thebergamo/k7.git",
+    "mysql": "^2.10.2",
+    "pg": "^4.5.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.19.3",
+    "sqlite3": "^3.1.1",
+    "tedious": "^1.13.2"
+  },
+  "devDependencies": {
+    "code": "^2.1.0",
+    "hapi": "^13.0.0",
+    "lab": "^10.1.0"
+  }
+}

@@ -28,7 +28,9 @@ describe('K7Sequelize', () => {
     models: 'test/models/*.js',
     adapter: K7Sequelize,
     connectionOptions: {
-      dialect: 'postgres' 
+      options: {
+        dialect: 'postgres' 
+      }
     }
   };
 

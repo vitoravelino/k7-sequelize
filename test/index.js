@@ -9,7 +9,6 @@ const Path = require('path');
 
 // Load example
 
-const K7 = require('k7');
 const K7Sequelize = require('../lib');
 const url = require('url');
 
@@ -19,7 +18,6 @@ const lab = exports.lab = Lab.script();
 const it = lab.it;
 const expect = Code.expect;
 const describe = lab.describe;
-const after = lab.after;
 const before = lab.before;
 
 describe('K7Sequelize', () => {
@@ -29,7 +27,7 @@ describe('K7Sequelize', () => {
     adapter: K7Sequelize,
     connectionOptions: {
       options: {
-        dialect: 'postgres' 
+        dialect: 'postgres'
       }
     }
   };
@@ -61,7 +59,7 @@ describe('K7Sequelize', () => {
       expect(server.database).to.deep.include('sequelize');
       expect(server.database).to.deep.include('User');
       done();
-    }); 
+    });
 
     it('should database is connected', (done) => {
       server.database.sequelize.authenticate()
@@ -69,10 +67,9 @@ describe('K7Sequelize', () => {
         // No error
 
         expect(errors).to.not.exist;
-      
         done();
       });
-    }); 
+    });
   });
 
   describe('when a plugin is registrated with an array of models in options', () => {
@@ -103,7 +100,7 @@ describe('K7Sequelize', () => {
       expect(server.database).to.deep.include('sequelize');
       expect(server.database).to.deep.include('User');
       done();
-    }); 
+    });
 
     it('should database is connected', (done) => {
       server.database.sequelize.authenticate()
@@ -111,10 +108,9 @@ describe('K7Sequelize', () => {
         // No error
 
         expect(errors).to.not.exist;
-      
         done();
       });
-    }); 
+    });
   });
 
   describe('when a plugin is registrated with adapter as string', () => {
@@ -147,7 +143,7 @@ describe('K7Sequelize', () => {
       expect(server.database).to.deep.include('sequelize');
       expect(server.database).to.deep.include('User');
       done();
-    }); 
+    });
 
     it('should database is connected', (done) => {
       server.database.sequelize.authenticate()
@@ -155,10 +151,9 @@ describe('K7Sequelize', () => {
         // No error
 
         expect(errors).to.not.exist;
-      
         done();
       });
-    }); 
+    });
   });
 
   describe('when a plugin is registrated and query the model', () => {
@@ -188,8 +183,12 @@ describe('K7Sequelize', () => {
           expect(rows).to.be.an.array();
           expect(rows).to.be.empty();
 
+          // No error
+
+          expect(error).to.not.exist;
+
           done();
-      });
+        });
     });
 
     it('should database is connected', (done) => {
@@ -198,14 +197,11 @@ describe('K7Sequelize', () => {
         // No error
 
         expect(errors).to.not.exist;
-      
         done();
       });
-    }); 
+    });
   });
-
 });
-
 
 function buildUri () {
   let username = process.env.DB_USERNAME || 'root';
@@ -219,4 +215,3 @@ function buildUri () {
     pathname: process.env.DB_NAME || 'project'
   });
 }
-

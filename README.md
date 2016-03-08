@@ -7,6 +7,7 @@ k7 adapter for sequelize ORM
 [![DevDependencies Status](https://david-dm.org/thebergamo/k7-sequelize/dev-status.svg)](https://david-dm.org/thebergamo/k7-sequelize#info=devDependencies)
 [![Known Vulnerabilities](https://snyk.io/test/npm/k7-sequelize/badge.svg)](https://snyk.io/test/npm/k7-sequelize)
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
+
 K7-Sequelize is an Adapter for using Sequelize (SQL ORM) in Hapi by K7 connector
 
 ## Usage

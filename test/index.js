@@ -57,6 +57,7 @@ describe('K7Sequelize', () => {
       expect(server).to.deep.include('database');
       expect(server.database).to.be.an.object();
       expect(server.database).to.deep.include('sequelize');
+      expect(server.database).to.deep.include('Sequelize');
       expect(server.database).to.deep.include('User');
       done();
     });
@@ -98,6 +99,7 @@ describe('K7Sequelize', () => {
       expect(server).to.deep.include('database');
       expect(server.database).to.be.an.object();
       expect(server.database).to.deep.include('sequelize');
+      expect(server.database).to.deep.include('Sequelize');
       expect(server.database).to.deep.include('User');
       done();
     });
@@ -141,6 +143,7 @@ describe('K7Sequelize', () => {
       expect(server).to.deep.include('database');
       expect(server.database).to.be.an.object();
       expect(server.database).to.deep.include('sequelize');
+      expect(server.database).to.deep.include('Sequelize');
       expect(server.database).to.deep.include('User');
       done();
     });
@@ -200,12 +203,19 @@ describe('K7Sequelize', () => {
         done();
       });
     });
+
+    it('should have object Sequelize', (done) => {
+      const k7 = new K7Sequelize();
+
+      expect(k7.db).to.contain('Sequelize');
+      done();
+    });
   });
 });
 
 function buildUri () {
-  let username = process.env.DB_USERNAME || 'root';
-  let password = process.env.DB_PASSWORD || null;
+  let username = process.env.DB_USERNAME || 'postgres';
+  let password = process.env.DB_PASSWORD || 'postgres';
   return url.format({
     protocol: 'postgresql',
     slashes: true,

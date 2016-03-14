@@ -220,7 +220,7 @@ function buildUri () {
     protocol: 'postgresql',
     slashes: true,
     auth: username + ':' + password,
-    port: process.env.DB_PORT || 5434,
+    port: process.env.DB_PORT || 5432,
     hostname: process.env.DB_HOST || 'localhost',
     pathname: process.env.DB_NAME || 'project'
   });

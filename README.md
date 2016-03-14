@@ -76,7 +76,7 @@ const config = {
   dialect: process.env.DB_DIALECT || 'postgres'
 };
 
-const sequelize = new k7.db.Sequelize(config.database, config.username, config.password, config);
+const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 let db = {sequelize, Sequelize};
 // Instantiate Umzug

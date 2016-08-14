@@ -28,20 +28,21 @@
   },
   "homepage": "https://github.com/thebergamo/k7-sequelize#readme",
   "dependencies": {
-    "glob": "7.0.x",
-    "hoek": "3.0.x",
+    "glob": "7.x.x",
+    "hoek": "4.x.x",
     "k7": "1.x.x",
+    "lab": "10.x.x",
     "mysql": "2.x.x",
-    "pg": "4.x.x",
+    "pg": "6.x.x",
     "pg-hstore": "2.x.x",
-    "sequelize": "3.x.x",
+    "sequelize": "4.0.0-0",
     "sqlite3": "3.x.x",
     "tedious": "1.x.x"
   },
   "devDependencies": {
-    "code": "2.x.x",
-    "hapi": "10.x.x",
+    "code": "3.x.x",
+    "hapi": "14.x.x",
     "lab": "10.x.x",
-    "semistandard": "7.x.x"
+    "semistandard": "8.x.x"
   }
 }

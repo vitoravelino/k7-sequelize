@@ -10,7 +10,6 @@ const Path = require('path');
 // Load example
 
 const K7Sequelize = require('../lib');
-const url = require('url');
 
 // Test shortcuts
 
@@ -22,12 +21,11 @@ const before = lab.before;
 
 describe('K7Sequelize', () => {
   let options = {
-    connectionString: buildUri(),
     models: 'test/models/*.js',
     adapter: K7Sequelize,
     connectionOptions: {
       options: {
-        dialect: 'postgres'
+        dialect: 'sqlite'
       }
     }
   };
@@ -54,11 +52,11 @@ describe('K7Sequelize', () => {
 
       // Instance of K7 should be registered
 
-      expect(server).to.deep.include('database');
+      expect(server).to.include('database');
       expect(server.database).to.be.an.object();
-      expect(server.database).to.deep.include('sequelize');
-      expect(server.database).to.deep.include('Sequelize');
-      expect(server.database).to.deep.include('User');
+      expect(server.database).to.include('sequelize');
+      expect(server.database).to.include('Sequelize');
+      expect(server.database).to.include('User');
       done();
     });
 
@@ -96,11 +94,11 @@ describe('K7Sequelize', () => {
 
       // Instance of K7 should be registered
 
-      expect(server).to.deep.include('database');
+      expect(server).to.include('database');
       expect(server.database).to.be.an.object();
-      expect(server.database).to.deep.include('sequelize');
-      expect(server.database).to.deep.include('Sequelize');
-      expect(server.database).to.deep.include('User');
+      expect(server.database).to.include('sequelize');
+      expect(server.database).to.include('Sequelize');
+      expect(server.database).to.include('User');
       done();
     });
 
@@ -140,11 +138,11 @@ describe('K7Sequelize', () => {
 
       // Instance of K7 should be registered
 
-      expect(server).to.deep.include('database');
+      expect(server).to.include('database');
       expect(server.database).to.be.an.object();
-      expect(server.database).to.deep.include('sequelize');
-      expect(server.database).to.deep.include('Sequelize');
-      expect(server.database).to.deep.include('User');
+      expect(server.database).to.include('sequelize');
+      expect(server.database).to.include('Sequelize');
+      expect(server.database).to.include('User');
       done();
     });
 
@@ -212,16 +210,3 @@ describe('K7Sequelize', () => {
     });
   });
 });
-
-function buildUri () {
-  let username = process.env.DB_USERNAME || 'postgres';
-  let password = process.env.DB_PASSWORD || 'postgres';
-  return url.format({
-    protocol: 'postgresql',
-    slashes: true,
-    auth: username + ':' + password,
-    port: process.env.DB_PORT || 5432,
-    hostname: process.env.DB_HOST || 'localhost',
-    pathname: process.env.DB_NAME || 'project'
-  });
-}

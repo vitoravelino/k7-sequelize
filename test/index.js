@@ -24,9 +24,7 @@ describe('K7Sequelize', () => {
     models: 'test/models/*.js',
     adapter: K7Sequelize,
     connectionOptions: {
-      options: {
-        dialect: 'sqlite'
-      }
+      dialect: 'sqlite'
     }
   };
 
